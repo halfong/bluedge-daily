@@ -1,0 +1,17 @@
+{
+  "name": "bluedge-daily",
+  "version": "1.0.0",
+  "description": "边界旅行行业日报",
+  "main": "index.js",
+  "dependencies": {
+    "@tryghost/admin-api": "^1.4.0",
+    "ae-crawler": "github:sunkeyfong/aecrawler",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sunkeyfong",
+  "license": "ISC"
+}
