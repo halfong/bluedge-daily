@@ -43,7 +43,7 @@ class PostGhost{
             updated_at : new Date(),
             created_at : new Date(),
             feature_image : items[0].image,
-        })
+        }).catch( e => console.log(e) )
     }
 
     /**

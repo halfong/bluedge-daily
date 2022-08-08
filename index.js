@@ -42,12 +42,16 @@ const postWxmp = require('./core/postWxmp');
       threads : threads
   }
   // 创建并发布到ghost
-  const ghost_post = await postGhost.publish( article.title, article.slug, article.threads )
-  console.log( 'Ghost Post已发布', ghost_post.id )
+  // console.log( 'Ghost Post发布')
+  // const ghost_post = await postGhost.publish( article.title, article.slug, article.threads )
+  // console.log( 'Ghost Post已发布', ghost_post.id )
 
   // 创建到微信公众号
-  const wxmp_post = await postWxmp.create( article.title, article.slug, article.threads )
-  console.log( '公众号图文已创建', wxmp_post )
+  // console.log( '公众号图文创建')
+  // const wxmp_post = await postWxmp.create( article.title, article.slug, article.threads )
+  // console.log( '公众号图文已创建', wxmp_post )
+
+  console.log( threads );
   
   console.timeEnd('task-duration');
   process.exit(0);

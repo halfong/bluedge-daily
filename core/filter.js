@@ -1,14 +1,18 @@
 const util = require('./util');
 
-module.exports = function filter( threads ){
+/**
+ * 
+ * @param {Array} threads 
+ * @param {Date} sdate 
+ * @param {Date} edate 
+ * @returns 
+ */
+module.exports = function filter( threads, sdate, edate ){
   
-  //过滤：仅限昨日内更新
-  const today = util.getEve()
-  const yesterday = util.getEve(-1)
-  threads = threads.filter( i => i.date < today && i.date >= yesterday )
-  console.log(`过滤后${threads.length}条`, `（时间${today}至${yesterday}）` )
+  threads = threads.filter( i => i.date < edate && i.date >= sdate )
+  console.log(`过滤后${threads.length}条`, `（时间${sdate}至${edate}）` )
 
-  //过滤：本日内post.title不重复
+  //过滤：post.title不重复
   threads = util.arrayObject.unique( threads, 'title' )
   console.log(`过滤后${threads.length}条`,`（title排重过滤后）`)
 

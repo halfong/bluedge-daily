@@ -8,49 +8,47 @@
 // ];
 
 module.exports = [
-    {
-        name : '环球旅讯',
-        concat : true,
-        queue : [
-            'https://www.traveldaily.cn/today',
-            'http://traveldaily.net/today/2/',
-            'http://traveldaily.net/today/3/',
-        ],
-        tm :`
-          div.articleItem@{
-                img.articlePicImg[src=$image];
-                h2 a[href=$link]{ $title };
-                span.articleItemTime{ $date };
-                p.articleItemDesc{ $teaser };
-                $source='环球旅讯';
-            };
-        `,
-        format : items => items.map( i => {
-            if( i.title.indexOf('TD') > -1 ) return null
-            i.link = 'https://www.traveldaily.cn'+i.link
-            i.image = 'https://www.traveldaily.cn'+i.image
-            return i
-        }).filter( i => i )
-    },
+    // {
+    //     // 分页改成了加载更多，只能抓一点
+    //     name : '环球旅讯',
+    //     concat : true,
+    //     queue : [
+    //         'https://www.traveldaily.cn/today',
+    //     ],
+    //     tm :`
+    //       div.articleItem@{
+    //             img.articlePicImg[src=$image];
+    //             h2 a[href=$link]{ $title };
+    //             span.articleItemTime{ $date };
+    //             p.articleItemDesc{ $teaser };
+    //             $source='环球旅讯';
+    //         };
+    //     `,
+    //     format : items => items.map( i => {
+    //         if( i.title.indexOf('TD') > -1 ) return null
+    //         i.link = 'https://www.traveldaily.cn'+i.link
+    //         i.image = 'https://www.traveldaily.cn'+i.image
+    //         return i
+    //     }).filter( i => i )
+    // },
     
-    {
-        name : '执惠',
-        concat : true,
-        queue : [
-            'http://www.tripvivid.com/articles/',
-            'http://www.tripvivid.com/articles?at=&page=2',
-            'http://www.tripvivid.com/articles?at=&page=3',
-        ],
-        tm :`
-            .list-item@{
-                a img[src=$image];
-                a.f20[href=$link]{ $title }
-                .f14.text{ $teaser }
-                .mt10 .c9:last-child{ $date }
-                $source='执惠';
-            };
-        `,
-    },
+    // {
+    //   //  分页改成了加载更多，只能抓一点
+    //     name : '执惠',
+    //     concat : true,
+    //     queue : [
+    //         'http://www.tripvivid.com/breakfeed',
+    //     ],
+    //     tm :`
+    //         .list-item@{
+    //             a img[src=$image];
+    //             a.f20[href=$link]{ $title }
+    //             .f14.text{ $teaser }
+    //             .mt10 .c9:last-child{ $date }
+    //             $source='执惠';
+    //         };
+    //     `,
+    // },
 
     {
         name : '新旅界',
@@ -59,9 +57,11 @@ module.exports = [
             'http://www.lvjie.com.cn/brand/index.html',
             'http://www.lvjie.com.cn/brand/2.html',
             'http://www.lvjie.com.cn/brand/3.html',
+            'http://www.lvjie.com.cn/brand/4.html',
+            'http://www.lvjie.com.cn/brand/5.html',
         ],
         tm :`
-            date-list li@{
+            .date-list li@{
                 img.pic[src=$image];
                 a.list-tit[href=$link]{ $title }
                 p.list-abs{ $teaser }
@@ -71,29 +71,28 @@ module.exports = [
         `,
     },
 
-    {
-        name : '迈点/旅游',
-        concat : true,
-        queue : [
-            'https://www.meadin.com/ly/',
-            'https://www.meadin.com/ly/2',
-            'https://www.meadin.com/ly/3',
-        ],
-        tm :`
-            .news-box@{
-                .left-img-box img[src=$image];
-                a[data-cut=newtitle][href=$link]{ $title }
-                p[data-cut="metaDes"]{ $teaser }
-                span[data-ymd]{ $date }
-                $source='迈点/旅游';
-            };
-        `,
-        format : items => items.map( i => {
-            i.link = 'https://www.meadin.com'+i.link
-            i.image = 'https://www.meadin.com'+i.image
-            return i
-        })
-    },
+    // {
+    //   //  分页改成了加载更多，只能抓一点
+    //     name : '迈点/旅游',
+    //     concat : true,
+    //     queue : [
+    //         'https://www.meadin.com',
+    //     ],
+    //     tm :`
+    //         .news-box@{
+    //             .left-img-box img[src=$image];
+    //             a[data-cut=newtitle][href=$link]{ $title }
+    //             p[data-cut="metaDes"]{ $teaser }
+    //             span[data-ymd]{ $date }
+    //             $source='迈点/旅游';
+    //         };
+    //     `,
+    //     format : items => items.map( i => {
+    //         i.link = 'https://www.meadin.com'+i.link
+    //         i.image = 'https://www.meadin.com'+i.image
+    //         return i
+    //     })
+    // },
 
     {
         name : '中国旅游新闻网',
