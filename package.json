@@ -7,10 +7,13 @@
     "@tryghost/admin-api": "^1.4.0",
     "ae-crawler": "github:sunkeyfong/aecrawler",
     "axios": "^0.21.1",
-    "date-and-time": "^2.4.1"
+    "date-and-time": "^2.4.1",
+    "dotenv": "^16.0.1",
+    "moment": "^2.29.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task": "node index.js"
   },
   "author": "sunkeyfong",
   "license": "ISC"

@@ -1,8 +1,8 @@
-module.exports = function({ title, slug, threads }){
+module.exports = function( threads ){
   var html = head();
   html += ['全景数据','行业消息','国内动态'].map( t => subtitle(t) ).join('');
   html += threads.map( th => thread(th) ).join('');
-  return html;
+  return html.replace(/\r\s+|\n\s+|\r|\n/g,'');
 }
 
 
