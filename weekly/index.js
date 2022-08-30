@@ -11,9 +11,13 @@ module.exports = async function( args ){
   const [ sdate, edate ] = args
 
 
+  
   await $tec.crawl();
+  if( $tec.threads.length == 0 ) return console.log('没有可用数据');
   $tec.unique('title');
   $tec.dateBetween( sdate , edate );
+  console.log( $tec.threads );
+
 
   const html = makeHtml( $tec.threads );
   const wxmp_post = await wemp.createDrafts([

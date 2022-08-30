@@ -47,27 +47,6 @@ module.exports = [
           return i
       }),
   },
-  {
-    name : '旅游产经网-行业',
-    concat : true,
-    queue : [
-        'https://www.tourseye.com/article/index.html?pid=1',
-        'https://www.tourseye.com/article/index.html?pid=1&page=2',
-    ],
-    tm :`
-        a[href=$link].item@{
-          .pic img[src=$image];
-          .tit{ $title }
-          .desc{ $teaser }
-          .time{ $date }
-          $source='旅游产经网';
-        };
-    `,
-    format : items => items.map( i => {
-        i.image = 'https://www.tourseye.com' + i.image
-        return i
-    }),
-  },
 
   // @fix 有些问题
   // {
