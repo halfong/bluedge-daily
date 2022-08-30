@@ -1,8 +1,7 @@
 const axios = require('axios');
-module.exports = class AeWemp{
-
+class AeWemp{
+  
     token = null
-
     constructor( appid, appsecret ){
         this.appid = appid
         this.appsecret = appsecret
@@ -26,3 +25,5 @@ module.exports = class AeWemp{
     }
 
 }
+
+module.exports = new AeWemp( 'wx14401f2b01127b62', 'a8130a82c9d7e568cfa2559a4b96f6f1' );

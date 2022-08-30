@@ -1,15 +1,12 @@
 {
   "name": "bluedge-daily",
   "version": "1.0.0",
-  "description": "边界旅行行业日报",
+  "description": "基于Tecrawl抓取旅业资讯",
   "main": "index.js",
   "dependencies": {
-    "@tryghost/admin-api": "^1.4.0",
-    "ae-crawler": "github:sunkeyfong/aecrawler",
     "axios": "^0.21.1",
-    "date-and-time": "^2.4.1",
-    "dotenv": "^16.0.1",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "tecrawl": "^1.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
